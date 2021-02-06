@@ -1,0 +1,6 @@
+config.json
+launch.bat
+launch.ahk
+raven-bot.db
+package-lock.json
+node_modules

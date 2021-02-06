@@ -1,0 +1,18 @@
+{
+    "items": [
+        "double_coin_booster", "triple_coin_booster", "penta_coin_booster", "double_xp_booster", "triple_xp_booster", "penta_xp_booster"
+    ],
+
+    "prices": {
+        "double_coin_booster": 50,
+        "triple_coin_booster": 100,
+        "penta_coin_booster": 150,
+        "double_xp_booster": 25,
+        "triple_xp_booster": 75,
+        "penta_xp_booster": 125,
+        "room": 1000,
+        "bio": 500,
+        "color": 250,
+        "nick": 100
+    }
+}
