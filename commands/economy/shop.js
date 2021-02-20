@@ -39,7 +39,6 @@ module.exports = class extends Command {
             .addField('Boosters (3 days)', content)
             .addField('Other', stripIndents`
             **1.** NICK CHANGE - Use **${prefix}nick** - **${shop.prices.nick}** gems
-            **2.** VOICE ROOM - Use **${prefix}room** - **${shop.prices.room}** gems
             **3.** PROFILE EMBED COLOR - Use **${prefix}color** - **${shop.prices.color}** gems
             **4.** PROFILE EMBED BIO - Use **${prefix}bio** - **${shop.prices.bio}** gems
             `)

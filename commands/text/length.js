@@ -6,14 +6,14 @@ module.exports = class extends Command {
 		super(...args, {
 			aliases: [],
 			description: 'Displays character count of text.',
-            category: 'utility',
+            category: 'text',
             usage: '<text>'
 		});
 	}
 
 	run(message, args) {
 
-		if (!args[0]) return message.reply('You need to input a text!');
+		if (!args[0]) return message.reply('You need to provide a text!');
 
 		let characterCount = this.client.utils.countCharacters(args.join(' '));
 
