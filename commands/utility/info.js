@@ -28,7 +28,7 @@ module.exports = class extends Command {
         `)
         .addField('Links', stripIndents`
         **❯ Server:** [Here](https://discord.gg/KD457qA)
-        **❯ GitHub:** [Here](https://github.com/RavenProbably)
+        **❯ Source Code:** [Here](https://github.com/RavenProbably/Raven-Bot)
         `)
         .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
         .setTimestamp()

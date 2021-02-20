@@ -416,33 +416,6 @@ module.exports = class Database {
 		db.prepare(query).run(id);
 	}
 
-	setReminder(id, start, end) {
-		let user = this.client.users.cache.find(user => user.id === id);
-		let query = `SELECT * FROM reminders WHERE id = ?`;
-		const row = db.prepare(query).get(id);
-		if (row === undefined) {
-			let insert = db.prepare('INSERT INTO reminders VALUES(?,?,?,?)');
-            insert.run(user.tag, id, start, end);
-        } else {
-			return;
-		};
-	}
-
-	getReminder(id) {
-		let query = 'SELECT end FROM reminders WHERE id = ?';
-		const row = db.prepare(query).get(id);
-		if (row === undefined) {
-			return;
-        } else {
-			return row.end;
-		}
-	}
-
-	deleteReminder(id) {
-		let query = `DELETE FROM reminders WHERE id = ?`;
-		db.prepare(query).run(id);
-	}
-
 	setDaily(id, last, next, claim) {
 		let user = this.client.users.cache.find(user => user.id === id);
 		let query = `SELECT * FROM dailies WHERE id = ?`;
@@ -609,34 +582,6 @@ module.exports = class Database {
 	deleteBooster(id) {
 		let query = `DELETE FROM boosters WHERE id = ?`;
 		db.prepare(query).run(id);
-	}
-
-	addPermission(guildId, permission) {
-		let guild = this.client.guilds.cache.find(guild => guild.id === guildId);
-		let query = 'SELECT guildid FROM permissions WHERE guildid = ?';
-		const row = db.prepare(query).get(guildId);
-        if (row === undefined) {
-            let insert = db.prepare('INSERT INTO permissions VALUES(?,?,?)');
-            insert.run(guild.name, guildId, permission);
-        } else {
-            let update = db.prepare('UPDATE permissions SET guildname = ?, permission = ? WHERE guildid = ?');
-            update.run(guild.name, permission, guildId);
-        };
-	}
-
-	getPermission(guildId, permission) {
-		let query = 'SELECT permission FROM permissions WHERE guildid = ? AND permission = ?';
-		const row = db.prepare(query).get(guildId, permission);
-		if (row === undefined) {
-			return;
-        } else {
-			return row;
-		}
-	}
-
-	deletePermission(guildId, permission) {
-		let query = `DELETE FROM permissions WHERE guildid = ? AND permission = ?`;
-		db.prepare(query).run(guildId, permission);
 	}
 
 }

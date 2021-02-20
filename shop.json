@@ -4,14 +4,14 @@
     ],
 
     "prices": {
-        "double_coin_booster": 50,
-        "triple_coin_booster": 100,
-        "penta_coin_booster": 150,
+        "double_coin_booster": 25,
+        "triple_coin_booster": 50,
+        "penta_coin_booster": 100,
         "double_xp_booster": 25,
-        "triple_xp_booster": 75,
-        "penta_xp_booster": 125,
-        "bio": 500,
-        "color": 250,
-        "nick": 100
+        "triple_xp_booster": 50,
+        "penta_xp_booster": 100,
+        "bio": 200,
+        "color": 100,
+        "nick": 50
     }
 }
