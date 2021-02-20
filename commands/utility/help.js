@@ -31,7 +31,7 @@ module.exports = class extends Command {
 				`**❯ Description:** ${cmd.description}`,
 				`**❯ Category:** ${cmd.category === 'nsfw' ? 'NSFW' : this.client.utils.capitaliseFirst(cmd.category)}`,
 				`**❯ Usage:** ${cmd.usage}`,
-				`**❯ Availability :** ${cmd.category === 'nsfw' ? 'NSFW' : cmd.availability}`
+				`**❯ Availability:** ${cmd.category === 'nsfw' ? 'NSFW' : cmd.availability}`
 			]);
 
 			return message.channel.send(embed);
