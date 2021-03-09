@@ -30,7 +30,6 @@ module.exports = class extends Command {
         let color = this.client.database.getColor(user.id) || colors.white;
         let claimed = this.client.database.getDailyClaims(user.id) || 0;
         let bond = this.client.database.getBond(user.id);
-        let relationship = bond ? bond.secondusername : 'None';
         let messages = numeral(this.client.database.getMessages(user.id)).format('0,0') || 0;
         let wins = this.client.database.getGamble(user.id) ? this.client.database.getGamble(user.id).wins : 0;
         let games = this.client.database.getGamble(user.id) ? this.client.database.getGamble(user.id).games : 0;
@@ -61,7 +60,6 @@ module.exports = class extends Command {
         .addField('Activity', stripIndents`
         **❯ Messages Sent:** ${messages}
         **❯ Dailies Claimed:** ${claimed}
-        **❯ Relationship:** ${relationship}
         `, true)
         .addField('Gamble', stripIndents`
         **❯ Winrate:** ${winrate}

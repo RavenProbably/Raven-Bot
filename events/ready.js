@@ -27,9 +27,7 @@ module.exports = class extends Event {
                 db.prepare('CREATE TABLE IF NOT EXISTS bios(username TEXT, id INTEGER, bio TEXT)').run();
                 db.prepare('CREATE TABLE IF NOT EXISTS colors(username TEXT, id INTEGER, hex TEXT)').run();
                 db.prepare('CREATE TABLE IF NOT EXISTS dailies(username TEXT, id INTEGER, last INTEGER, next INTEGER, claims INTEGER)').run();
-                db.prepare('CREATE TABLE IF NOT EXISTS bonds(username TEXT, id INTEGER, secondusername TEXT, secondid INTEGER, date TEXT)').run();
                 db.prepare('CREATE TABLE IF NOT EXISTS autoroles(guildname TEXT, guildid INTEGER, rolename TEXT, roleid INTEGER)').run();
-                db.prepare('CREATE TABLE IF NOT EXISTS mutes(username TEXT, id INTEGER, start INTEGER, end INTEGER)').run();
                 db.prepare('CREATE TABLE IF NOT EXISTS gambles(username TEXT, id INTEGER, wins INTEGER, games INTEGER, lost INTEGER)').run();
                 db.prepare('CREATE TABLE IF NOT EXISTS gems(username TEXT, id INTEGER, gems INTEGER)').run();
                 db.prepare('CREATE TABLE IF NOT EXISTS boosters(username TEXT, id INTEGER, type TEXT, end INTEGER)').run();

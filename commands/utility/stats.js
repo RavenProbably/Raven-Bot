@@ -38,8 +38,6 @@ module.exports = class extends Command {
         **❯ Channel Count:** ${this.client.channels.cache.size}
         **❯ Category Count:** ${categories.length}
         **❯ Command Count:** ${this.client.commands.size}
-        **❯ Code Lines Count:** 6.3K+
-        **❯ JSON Data Count:** 150
         `)
         .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
         .setTimestamp()

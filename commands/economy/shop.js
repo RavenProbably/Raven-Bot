@@ -10,7 +10,7 @@ module.exports = class extends Command {
     constructor(...args) {
         super(...args, {
             aliases: ['buy'],
-            description: 'Allows you to buy items for coins.',
+            description: 'Allows you to buy items for gems.',
             category: 'economy',
             usage: '<item>'
         });
@@ -36,7 +36,7 @@ module.exports = class extends Command {
             .setColor(colors.default)
             .setAuthor(`Shop`, this.client.user.displayAvatarURL())
             .setTitle('Items')
-            .addField('Boosters (3 days)', content)
+            .addField('Boosters (7 days)', content)
             .addField('Other', stripIndents`
             **1.** NICK CHANGE - Use **${prefix}nick** - **${shop.prices.nick}** gems
             **3.** PROFILE EMBED COLOR - Use **${prefix}color** - **${shop.prices.color}** gems
@@ -63,7 +63,7 @@ module.exports = class extends Command {
                     if (booster) return message.reply('You already have booster!');
                     
                     this.client.database.chargeGems(message.author.id, shop.prices[item]);
-                    this.client.database.addBooster(message.author.id, this.client.utils.formatItem(item), Date.now() + 259200000);
+                    this.client.database.addBooster(message.author.id, this.client.utils.formatItem(item), Date.now() + 604800000);
 
                     message.reply(`Successfully bought **${this.client.utils.formatItem(item)}** for **${numeral(shop.prices[item]).format('0,0')}** ${this.client.utils.isMultiple(shop.prices[item]) ? 'gems' : 'gem'}.`);
 

@@ -27,8 +27,9 @@ module.exports = class extends Command {
         **❯ Created:** ${moment.utc(message.guild.members.cache.get(this.client.user.id).user.createdAt).format('dddd, MMMM Do, YYYY')} (${this.client.utils.checkDays(message.guild.members.cache.get(this.client.user.id).user.createdAt)})
         `)
         .addField('Links', stripIndents`
-        **❯ Server:** [Here](https://discord.gg/KD457qA)
-        **❯ Source Code:** [Here](https://github.com/RavenProbably/Raven-Bot)
+        **❯ Web:** [Web](https://rvn.now.sh)
+        **❯ Server:** [Server](https://discord.gg/KD457qA)
+        **❯ Source Code:** [Source Code](https://github.com/RavenProbably/Raven-Bot)
         `)
         .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
         .setTimestamp()

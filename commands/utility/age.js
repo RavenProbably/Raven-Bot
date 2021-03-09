@@ -15,6 +15,10 @@ module.exports = class extends Command {
 
 		let year = Number(args[0]);
 
+		if (isNaN(year)) {
+			return message.reply(`You need to provide a number!`);
+		}
+
 		let currentYear = new Date().getFullYear();
 
 		let age = currentYear - year;
